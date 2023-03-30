@@ -17,14 +17,14 @@ export class TaskService {
   }
 
   addEditTask(postData: any, selectedTask: any) {
-    console.log("Selected Task in service: " + selectedTask);
+    //console.log("Selected Task in service: " + selectedTask);
     if (!selectedTask) {
-      console.log("THIS IS ADD");
-      console.log("postData: " + postData);
+      //console.log("THIS IS ADD");
+      //console.log("postData: " + postData);
       return this.http.post(this.url, postData);
     }
     else {
-      console.log("THIS IS UPDATED");
+      //console.log("THIS IS UPDATED");
       return this.http.patch(`${this.url}/${selectedTask.id}`, postData); // different url?
     }
 

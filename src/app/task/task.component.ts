@@ -32,7 +32,7 @@ export class TaskComponent implements OnInit, OnDestroy {
   }
 
   showAddModal() {
-    console.log("Modal Showed up!");
+    //console.log("Modal Showed up!");
     this.displayAddEditModal = true;
     this.selectedTask = null;
   }
@@ -45,22 +45,22 @@ export class TaskComponent implements OnInit, OnDestroy {
   saveUpdateTaskList(newData: any) {
     console.log("task.component.ID: " + newData.id);
     if (this.selectedTask && newData.id === this.selectedTask.id) {
-      console.log('UPDATED');
+      //console.log('UPDATED');
       const taskIndex = this.tasks.findIndex(data => data.id === newData.id);
       this.tasks[taskIndex] = newData;
     }
     else {
-      console.log("ADDED");
+      //console.log("ADDED");
       this.tasks.unshift(newData);  // add
     }
 
   }
 
   showEditModal(task: any) {
-    console.log('edit modal is shown.');
+    //console.log('edit modal is shown.');
     this.displayAddEditModal = true;
     this.selectedTask = task;
-    console.log("Selected Task: showEditModal ", this.selectedTask);
+    //console.log("Selected Task: showEditModal ", this.selectedTask);
   }
 
   deleteTask(task: Task) {
@@ -83,7 +83,7 @@ export class TaskComponent implements OnInit, OnDestroy {
   }
 
   completeTask(task: Task) {
-    console.log(task);
+    //console.log(task);
     this.taskService.completeTask(task);
   }
 
